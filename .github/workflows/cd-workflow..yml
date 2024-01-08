@@ -12,6 +12,7 @@ env:  ##change this URL!!
   
   AWS_REGION: ap-northeast-1
   
+  ECS_CLUSTER: ecs-lessom-cluster001
   ECS_WEBAPP_SERVICE: ecs-sample-webapp
   ECS_RESTAPI_SERVICE: ecs-sample-restapi
   
@@ -83,8 +84,8 @@ jobs:
 # deploy ECS
     - name: Deploy to ECS
       run: |
-        aws ecs update-service --service $ECS_WEBAPP_SERVICE --cluster ecs-lesson-cluster --force-new-deployment
-        aws ecs update-service --service $ECS_RESTAPI_SERVICE --cluster ecs-lesson-cluster --force-new-deployment
+        aws ecs update-service --service $ECS_WEBAPP_SERVICE --cluster $ECS_CLUSTER --force-new-deployment
+        aws ecs update-service --service $ECS_RESTAPI_SERVICE --cluster $ECS_CLUSTER --force-new-deployment
 
 
 
