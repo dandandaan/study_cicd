@@ -4,6 +4,7 @@ on: [push]
 
 env:  ##change this URL!!
   SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
+  SLACK_CHANNEL: info-githubactions
 
 jobs:
   ci:
