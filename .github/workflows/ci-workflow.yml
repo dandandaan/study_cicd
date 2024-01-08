@@ -3,7 +3,7 @@ name: CI flow for Amazon ECS
 on: [push]
 
 env:  ##change this URL!!
-  SLACK_WEBHOOK: https://hooks.slack.com/services/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
+  SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
   SLACK_CHANNEL: info-githubactions
 
 jobs:
